@@ -12,8 +12,10 @@ table.table
         tr
             td User
             td Dish
+            td Cost (K VND)
     tbody
         - @orders.each do |order|
             tr
                 td= order.user.name
                 td= order.dish.name
+                td= order.dish.cost

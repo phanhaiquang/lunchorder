@@ -10,6 +10,11 @@
   <%= @dish.enable %>
 </p>
 
+<p>
+  <strong>Cost:</strong>
+  <%= @dish.cost %>
+</p>
+
 <%= link_to 'Edit', edit_dish_path(@dish) %> |
 <%= link_to 'Back', dishes_path %> |
 <%= link_to 'New Dish', new_dish_path %>
