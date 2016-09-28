@@ -1,0 +1,19 @@
+div
+    | Please select a dish for 
+    = @current_user.name
+
+= form_for @your_dish, :url => order_path, method: :post do |f|
+  = f.hidden_field :id
+  = f.select :dish_id, options_from_collection_for_select(@dishes, "id", "name"), {}
+  = f.submit
+  
+table.table
+    thead
+        tr
+            td User
+            td Dish
+    tbody
+        - @orders.each do |order|
+            tr
+                td= order.user.name
+                td= order.dish.name
